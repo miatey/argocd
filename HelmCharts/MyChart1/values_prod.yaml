@@ -1,6 +1,7 @@
 # Prod Override Values for my Helm Chart
 
 container:
-  image: adv4000/k8sphp:version2
+  image: nginx:latest
+#  image: adv4000/k8sphp:version2
 
 replicaCount: 3

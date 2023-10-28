@@ -18,7 +18,8 @@ spec:
       - values_dev.yaml
       parameters:
       - name: "container.image"
-        value: adv4000/app1:v3
+        value: nginx:latest
+#        value: adv4000/app1:v3
 
   project: default
   syncPolicy:
