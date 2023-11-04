@@ -20,18 +20,18 @@ applicationSet:
   replicas: 2
 #----------------------------------------------------------------
 # Fixing issue with Stuck Processing for Ingress resource
-server:
-  config:
+#server:
+#  config:
 #    ingress:
 #      class: nginx
 #      hosts:
 #        - localhost
 #        - 107.21.195.116  # Додайте вашу IP-адресу тут
 
-    resource.customizations: |
-      networking.k8s.io/Ingress:
-        health.lua: |
-          hs = {}
-          hs.status = "Healthy"
-          return hs 
+#    resource.customizations: |
+#      networking.k8s.io/Ingress:
+#        health.lua: |
+#          hs = {}
+#          hs.status = "Healthy"
+#          return hs 
 

@@ -10,4 +10,9 @@ module "argocd_dev_root" {
   eks_cluster_name = "k8s-cluster-test10"
   git_source_path = "demo-dev/applications"
   git_source_repoURL = "git@github.com:miatey/argocd.git"
+
+# Вказуємо залежність від модуля "argocd_dev"
+#  depends_on = [module.argocd_dev]
+
 }
+
