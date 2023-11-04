@@ -18,7 +18,7 @@ spec:
       - values_dev.yaml
       parameters:
       - name: "container.image"
-        value: nginx:1.24
+        value: nginx:latest
 #        value: adv4000/app1:v3
 
   project: default
