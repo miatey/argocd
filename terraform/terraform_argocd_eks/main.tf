@@ -14,7 +14,6 @@ provider "helm" {
   }
 }
 
-
 resource "helm_release" "argocd" {
   name             = "argocd"
   repository       = "https://argoproj.github.io/argo-helm" # Official Chart Repo
@@ -23,6 +22,23 @@ resource "helm_release" "argocd" {
   version          = var.chart_version
   create_namespace = true
   values           = [file("${path.module}/argocd.yaml")]
+  wait       = "true"
+  timeout    = 600
 }
 
 
+
+/*
+resource "null_resource" "install_argocd" {
+  triggers = {
+    always_run = "${timestamp()}"
+  }
+
+  provisioner "local-exec" {
+    command = <<EOT
+      helm install argocd https://argoproj.github.io/argo-helm/argo-cd --timeout 360 -n argocd --create-namespace --values ${path.module}/argocd.yaml
+    EOT
+  }
+}
+
+*/
